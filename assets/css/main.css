@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light mode is default, so no background or color overrides needed */
+
+/* Dark mode styles activated only when 'dark' class is on <html> */
+html.dark, body.dark, #__nuxt.dark {
+  background-color: #212633; /* Tailwind's bg-darkblue */
+  color: #000000;            /* Tailwind's text-gray-300 */
+  min-height: 100vh;         /* Tailwind's min-h-screen */
+  transition-property: background-color, color;
+  transition-duration: 300ms;
+}
+
+/* Make sure text inherits color */
+html.dark p,
+html.dark span,
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6,
+html.dark a,
+html.dark div {
+  color: inherit;
+}
+
+/* Links in dark mode */
+html.dark a {
+  color: #60a5fa; /* Tailwind's blue-400 */
+}
+html.dark a:hover {
+  color: #93c5fd; /* lighter blue on hover */
+}
+
+/* Smooth color transition */
+html {
+  transition: background-color 0.3s, color 0.3s;
+}

@@ -1,0 +1,22 @@
+// Specificarea sursei de date (baza de date)
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// Specificarea generatorului pentru Prisma Client
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Definirea modelului cu 4+5 câmpuri
+model User {
+  id        Int      @id @default(autoincrement()) // câmp 1
+  name      String                                 // câmp 2
+  flag      Int                                    // câmp 3
+  A1        Boolean  @default(false)               // câmp 4
+  A2        Boolean  @default(false)
+  A3        Boolean  @default(false)
+  A4        Boolean  @default(false)
+  A5        Boolean  @default(false)
+}
